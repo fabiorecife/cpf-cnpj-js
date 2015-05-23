@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta property="og:url" content="http://fabioalmeida.net/app/geradorcpfcnpj">
+    <meta property="og:title" content="Gerador e validador de CPF e CNPJ">
+    <meta property="og:description" content="Um gerador de cpf e cnpj">
+    <meta property="og:image" content="https://muut.com/common/img/og.jpg">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CPF\CNPJ Gerador e Validador</title>
+
+    <!-- Bootstrap -->
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Gerador e Validador de CPF\CNPJ</h1>
+        <p class="lead">Ferramenta para gerar e validar CPF ou CNPJ</p>
+    </div>
+    <form role="form">
+    <h3>Validar CPF</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="valcpflabel">CPF:</span>
+                <input id="cpfvalor" type="text" class="form-control" placeholder="CPF com ou sem formatação"
+                       aria-describedby="valcpflabel">
+                 <span class="input-group-btn">
+                     <button id="buttonValidarCPF" class="btn btn-default" type="button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Validar</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <div id="alertcpfsuccess" class="alert alert-success sr-only"  role="alert">CPF Valido!</div>
+            <div id="alertcpferro" class="alert alert-danger sr-only"  role="alert">CPF Inválido</div>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <h3>Validar CNPJ</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="valcnpjlabel">CNPJ:</span>
+                <input type="text" class="form-control" placeholder="CNPJ com ou sem formatação"
+                       aria-describedby="valcnpjlabel">
+
+                 <span class="input-group-btn">
+
+                     <button id="buttonValidarCNPJ" class="btn btn-default" type="button"> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                         Validar
+                     </button>
+                </span>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div id="alertcnpjsuccess" class="alert alert-success sr-only"  role="alert">...</div>
+            <div id="alertcnpjerro" class="alert alert-danger sr-only"  role="alert">...</div>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    </form>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/vcpfcnpj.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
