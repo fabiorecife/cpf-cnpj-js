@@ -1,8 +1,7 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Created by fabio on 23/05/15.
  */
+
 
 if (!String.prototype.repeat) {
     String.prototype.repeat = function(num) {
@@ -10,7 +9,7 @@ if (!String.prototype.repeat) {
     }
 }
 
-function calcDVCPF(_cpf) {
+function calcDvCPF(_cpf) {
     var soma = 0;
     var cpf = _cpf;
     var w, i, j;
@@ -31,7 +30,7 @@ function isCPFNumber(_cpf) {
     var cpf;
     if (_cpf.length === 11) {
         cpf = _cpf.substr(0, 9);
-        cpf = cpf + calcDVCPF(cpf);
+        cpf = cpf + calcDvCPF(cpf);
 
     }
     return (cpf === _cpf);
@@ -44,7 +43,7 @@ function formatCPF(_cpf) {
             .replace(/(\d{3})(\d)/, "$1-$2");
 }
 
-function generatorCPF(_format, _cpfseed) {
+function generateCPF(_format, _cpfseed) {
     var xs;
     var cpf = _cpfseed ? (_cpfseed.length > 9 ? _cpfseed.substring(0, 9) : _cpfseed) : "";
     xs = 'x'.repeat(9 - cpf.length);
@@ -53,15 +52,15 @@ function generatorCPF(_format, _cpfseed) {
         return r.toString(10);
     });
 
-    cpf = cpf + calcDVCPF(cpf);
+    cpf = cpf + calcDvCPF(cpf);
     if (_format)
         cpf = formatCPF(cpf);
     return cpf;
 }
 
-function calcDVCNPJ(_cnpj) {
+function calcDvCNPJ(_cnpj) {
     var cgc = _cnpj.substr(0, 12);
-    var w, i, j;
+    var w, i;
     var soma = 0;
     var mult = "543298765432";
     for (w = 0; w < 2; w++)
@@ -83,7 +82,7 @@ function isCNPJNumber(_cnpj) {
     var cnpj;
     if (_cnpj.length === 14) {
         cnpj = _cnpj.substr(0, 12);
-        cnpj = cnpj + calcDVCNPJ(cnpj);
+        cnpj = cnpj + calcDvCNPJ(cnpj);
 
     }
     return (cnpj === _cnpj);
@@ -98,7 +97,7 @@ function formatCNPJ(_cnpj) {
     ;
 }
 
-function generatorCNPJ(_format, _cnpjseed) {
+function generateCNPJ(_format, _cnpjseed) {
     var xs;
     var cnpj = _cnpjseed ? (_cnpjseed.length > 12 ? _cnpjseed.substring(0, 12) : _cnpjseed) : "";
     xs = 'x'.repeat(12 - cnpj.length);
@@ -107,7 +106,7 @@ function generatorCNPJ(_format, _cnpjseed) {
         return r.toString(10);
     });
 
-    cnpj = cnpj + calcDVCNPJ(cnpj);
+    cnpj = cnpj + calcDvCNPJ(cnpj);
     if (_format)
         cnpj = formatCNPJ(cnpj);
     return cnpj;
