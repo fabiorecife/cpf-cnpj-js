@@ -7,7 +7,7 @@
 
 
     <meta property="og:url" content="http://fabioalmeida.net/app/geradorcpfcnpj">
-    <meta property="og:title" content="Gerador e validador de CPF e CNPJ">
+    <meta property="og:title" content="Formatar, gerar e validar  CPF e CNPJ">
     <meta property="og:description" content="Um gerador de cpf e cnpj">
     <meta property="og:image" content="https://muut.com/common/img/og.jpg">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -27,13 +27,15 @@
 
 <div class="container">
     <div class="page-header">
-        <h1>Gerador e Validador de CPF\CNPJ</h1>
-        <p class="lead">Ferramenta para gerar e validar CPF ou CNPJ</p>
+        <h1>Formatar, gerar e validar CPF\CNPJ</h1>
+        <p class="lead">Demonstrar o uso do <a href="js/val_cpf_cnpj.js">val_cpf_cnpj.js</a> para formatar,  gerar e validar CPF ou CNPJ</p>
     </div>
     <form role="form">
-    <h3>Validar CPF</h3>
+
     <div class="row">
         <div class="col-md-4">
+            <h3>Validar CPF</h3>
+            <div id="formgroupcpf" class="form-group">
             <div class="input-group">
                 <span class="input-group-addon" id="valcpflabel">CPF:</span>
                 <input id="cpfvalor" type="text" class="form-control" placeholder="CPF com ou sem formatação"
@@ -42,22 +44,17 @@
                      <button id="buttonValidarCPF" class="btn btn-default" type="button"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Validar</button>
                 </span>
             </div>
-        </div>
-        <div class="col-md-4">
+            </div>
+            <div id="alertcpfsuccess" class="alert alert-success in" style="display: none" role="alert">CPF Valido!</div>
+            <div id="alertcpferro" class="alert alert-danger in" style="display: none" role="alert">CPF Inválido</div>
 
-            <div id="alertcpfsuccess" class="alert alert-success sr-only"  role="alert">CPF Valido!</div>
-            <div id="alertcpferro" class="alert alert-danger sr-only"  role="alert">CPF Inválido</div>
 
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <h3>Validar CNPJ</h3>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="valcnpjlabel">CNPJ:</span>
-                <input type="text" class="form-control" placeholder="CNPJ com ou sem formatação"
-                       aria-describedby="valcnpjlabel">
+            <h3>Validar CNPJ</h3>
+            <div id="formgroupcnpj" class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="valcnpjlabel">CNPJ:</span>
+                    <input id="cnpjvalor" type="text" class="form-control" placeholder="CNPJ com ou sem formatação"
+                           aria-describedby="valcnpjlabel">
 
                  <span class="input-group-btn">
 
@@ -65,14 +62,53 @@
                          Validar
                      </button>
                 </span>
+                </div>
+            </div>
+            <div id="alertcnpjsuccess" class="alert alert-success in" style="display: none" role="alert">CNPJ Valido!</div>
+            <div id="alertcnpjerro" class="alert alert-danger in" style="display: none" role="alert">CNPJ Inválido</div>
+
+        </div>
+        <div class="col-md-4">
+            <h3>Gerar CPF</h3>
+            <div id="formGroupGerarCPF" class="form-group">
+                <button id="buttonGerarCPF" class="btn btn-default" type="button">Gerar CPF</button>
+                <ul id="listaCPF">
+
+                </ul>
+
             </div>
 
         </div>
         <div class="col-md-4">
-            <div id="alertcnpjsuccess" class="alert alert-success sr-only"  role="alert">...</div>
-            <div id="alertcnpjerro" class="alert alert-danger sr-only"  role="alert">...</div>
+            <h3>Gerar CNPJ</h3>
+            <div id="formGroupGerarCNPJ" class="form-group">
+                <button id="buttonGerarCNPJ" class="btn btn-default" type="button">Gerar CNPJ</button>
+                <ul id="listaCNPJ">
+
+                </ul>
+
+            </div>
 
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4"></div>
         <div class="col-md-4"></div>
     </div>
     </form>
@@ -82,7 +118,8 @@
 <script src="components/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/vcpfcnpj.js"></script>
+<script src="components/bootstrap/js/alert.js"></script>
+<script src="js/val_cpf_cnpj.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
