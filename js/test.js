@@ -34,6 +34,8 @@ QUnit.test( "calcDvCNPJ", function( assert ) {
 QUnit.test( "isCNPJNumber", function( assert ) {
   assert.ok( isCNPJNumber("34937125438828"), "Passed!" );
   assert.ok( isCNPJNumber("90758687089260"), "Passed!" );
+  assert.ok( isCNPJNumber("75524541000118"), "Passed!" );
+  assert.notOk( isCNPJNumber("75524541001118"), "Passed!" );
   assert.notOk( isCNPJNumber("90758687089261"), "Passed!" );
 });
 
