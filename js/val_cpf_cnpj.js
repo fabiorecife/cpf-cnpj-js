@@ -59,22 +59,22 @@ function generateCPF(_format, _cpfseed) {
 }
 
 function calcDvCNPJ(_cnpj) {
-    var cgc = _cnpj.substr(0, 12);
+    var cnpj = _cnpj.substr(0, 12);
     var w, i;
     var soma = 0;
     var mult = "543298765432";
     for (w = 0; w < 2; w++)
     {
-        for (i = 0; i < cgc.length; i++)
-            soma += (cgc.substr(i, 1) - 0) * (mult.substr(i, 1));
+        for (i = 0; i < cnpj.length; i++)
+            soma += (cnpj.substr(i, 1) - 0) * (mult.substr(i, 1));
         soma = (soma * 10) % 11;
         if (soma == 10)
             soma = 0;
-        cgc = cgc + soma;
+        cnpj = cnpj + soma;
         soma = 0;
         mult = "6" + mult;
     }
-    return cgc.substr(12,14);
+    return cnpj.substr(12,14);
 }
 
 function isCNPJNumber(_cnpj) {
