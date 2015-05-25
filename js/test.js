@@ -47,7 +47,7 @@ QUnit.test( "formatCNPJ", function( assert ) {
   assert.ok(exp.test(formatCNPJ("08318952616195")),"Passed!" );
 });
 
-QUnit.test( "generatorCNPJ", function( assert ) {
+QUnit.test( "generateCNPJ", function( assert ) {
   assert.ok( generateCNPJ().length===14, "Passed!" );
   assert.ok( isCNPJNumber(generateCNPJ()), "Passed!" );
 });
